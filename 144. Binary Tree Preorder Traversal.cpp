@@ -10,43 +10,30 @@
  * };
  */
 class Solution {
+
+public:
     
-private:
     void helper(TreeNode* root, vector <int> &arr){
         
-        if(root == nullptr){
-            return ;
+        if(root!=nullptr){
+            
+            arr.push_back(root->val);
+            helper(root->left,arr);
+            helper(root->right,arr);
+            
         }
         
-        helper(root->left,arr);
-        arr.push_back(root->val);
-        helper(root->right,arr);
         
     }
     
 public:
-    int minDiffInBST(TreeNode* root) {
+    vector<int> preorderTraversal(TreeNode* root) {
         
-    
         vector <int> arr;
         
         helper(root,arr);
         
-        if(arr.size() == 1){
-
-            return arr[0];
-        }
-        
-        int minDiff = arr[1] - arr[0];
-        
-        for(int i = 1;i<arr.size();i++){
-            
-            int currMin = arr[i] - arr[i-1];
-            
-            minDiff = min(minDiff,currMin);
-            
-        }
-        return minDiff;
+        return arr;
         
     }
-};s
+};

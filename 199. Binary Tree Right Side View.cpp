@@ -11,42 +11,34 @@
  */
 class Solution {
     
-private:
-    void helper(TreeNode* root, vector <int> &arr){
+public:
+    
+    void helper(TreeNode* root, vector <int> &arr, int level){
         
         if(root == nullptr){
+            
             return ;
         }
         
-        helper(root->left,arr);
+        if(arr.size() < level){
+
         arr.push_back(root->val);
-        helper(root->right,arr);
+            
+        }
         
+        helper(root->right,arr,level+1);
+        helper(root->left,arr,level+1);
+
     }
     
 public:
-    int minDiffInBST(TreeNode* root) {
+    vector<int> rightSideView(TreeNode* root) {
         
-    
         vector <int> arr;
         
-        helper(root,arr);
+        helper(root,arr,1);
         
-        if(arr.size() == 1){
-
-            return arr[0];
-        }
-        
-        int minDiff = arr[1] - arr[0];
-        
-        for(int i = 1;i<arr.size();i++){
-            
-            int currMin = arr[i] - arr[i-1];
-            
-            minDiff = min(minDiff,currMin);
-            
-        }
-        return minDiff;
+        return arr;
         
     }
-};s
+};
