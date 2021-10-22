@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define tc int t; cin>>t;while(t--){solve();}
+
+void solve(){
+    
+}
+
+int main() {
+
+    tc
+	return 0;
+}

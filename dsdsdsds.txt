@@ -1,0 +1,29 @@
+
+task1: predict inbound truckloads
+step1 -> predict sales units
+independent---dc_no, category_no, week, year
+dependent---sales units		
+step2 -> predict receipt units
+independent---dc_no, category_no, week, year,sales units
+depentent---receipt units
+step3 -> predict inbound truckloads
+independent---dc_no, category_no, week, year,sales units, receipt units
+depentent---inbound truckloads
+
+
+
+task2: predict receipt units
+step1 -> predict sales units
+independent---dc_no, category_no, week, year
+dependent---sales units
+step2 -> predict inbound truckloads
+independent---dc_no, category_no, week, year,sales units
+depentent---inbound truckloads
+step3 -> predict receipt units
+independent---dc_no, category_no, week, year,sales units, inbound truckloads
+depentent---receipt units
+
+rec_train 
+rec_test
+
+select sum(sales units) from df2 group by scrub_dc_no, week,year
