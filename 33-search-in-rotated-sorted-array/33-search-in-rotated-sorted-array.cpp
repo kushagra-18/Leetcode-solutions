@@ -31,9 +31,10 @@ public:
             }else{
                 
              hi = mid -1;
-            }
+                }
                 
-        }
+            }
+            
         }
             
             return -1;
