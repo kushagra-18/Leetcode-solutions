@@ -24,16 +24,14 @@ public:
             
         }
         
-        if(idx.size()==0 || idx.size()==1)
+        if(idx.size()==0)
             return s;
         
         int lo = 0;
         int hi = idx.size()-1;
         
-        for(int i = 0;lo<hi;){
-            
-            swap(s[idx[lo++]],s[idx[hi--]]);
-                
+        while(lo<hi){
+            swap(s[idx[lo++]],s[idx[hi--]]);     
         }
         
  
