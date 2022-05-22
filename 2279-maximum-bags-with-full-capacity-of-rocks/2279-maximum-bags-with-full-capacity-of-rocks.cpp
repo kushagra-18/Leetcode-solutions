@@ -25,8 +25,7 @@ public:
             }
             
             if(diff[i]==0)
-                count++;
-            
+                count++;     
         }
 
         return count;
