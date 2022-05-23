@@ -14,14 +14,13 @@ public:
     bool preOrder(TreeNode* root,int prev){
      
         if(root == nullptr)
-            return true;
-        
-        
+            return true ;
         
         if(prev != root->val)
             return false;
-       
-       return preOrder(root->left,prev) && preOrder(root->right,prev);
+  
+        
+       return preOrder(root->left,root->val) && preOrder(root->right,root->val);
     }
     
     bool isUnivalTree(TreeNode* root) {
