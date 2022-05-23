@@ -14,12 +14,12 @@ public:
         if(dp[start][m][n]!=-1)
             return dp[start][m][n];
         
-        int i=start;
-        int zeroes=count(strs[i].begin(),strs[i].end(),'0');
-        int ones=strs[i].size()-zeroes;
+        // int i=start;
+        int zeroes=count(strs[start].begin(),strs[start].end(),'0');
+        int ones=strs[start].size()-zeroes;
         if(m>=zeroes && n>=ones)
-            return dp[start][m][n]=max(1+solve(i+1,m-zeroes,n-ones,size,strs),solve(i+1,m,n,size,strs));
+            return dp[start][m][n]=max(1+solve(start+1,m-zeroes,n-ones,size,strs),solve(start+1,m,n,size,strs));
         else
-            return dp[start][m][n]=solve(i+1,m,n,size,strs);
+            return dp[start][m][n]=solve(start+1,m,n,size,strs);
     }
 };
