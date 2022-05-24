@@ -13,8 +13,9 @@ public:
             
         for(int i = 0;i<n-1;i++){
                 auto top = st.front();
+            st.pop();
                 st.push(top);
-                st.pop();
+                
                
             }    
         }
