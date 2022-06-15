@@ -17,7 +17,7 @@ public:
         if(flag)
             take = nums[idx] + solve(nums,idx+1,!flag,dp);
         else
-            take = nums[idx]*(-1) + solve(nums,idx+1,!flag,dp);
+            take = -nums[idx] + solve(nums,idx+1,!flag,dp);
         
         long long notTake = solve(nums,idx+1,flag,dp);
         
