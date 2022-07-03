@@ -15,10 +15,7 @@ public:
         string ans;
         for(auto x:message){
             
-            if(x!=' ')
-                ans.push_back(mp[x]);
-            if(x==' ')
-                ans.push_back(' ');
+            ans.push_back(x==' '?' ':mp[x]);
             
         }
         
