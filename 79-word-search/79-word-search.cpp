@@ -1,7 +1,7 @@
 class Solution {
 public:
     
-    bool helper(vector<vector<char>>& board,int n,int m,int i,int j,int idx,string word){
+    bool helper(vector<vector<char>>& board,int n,int m,int i,int j,int idx,string &word){
         
         if(idx == word.size()) 
             return true; 
