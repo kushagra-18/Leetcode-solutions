@@ -9,7 +9,7 @@ public:
         if(i>=n || i<0 || j>=m || j<0 || board[i][j]!=word[idx])
             return false;
         
-        char temp =  word[idx];
+        char temp = board[i][j];
         
         board[i][j] = '*';
         
@@ -18,7 +18,7 @@ public:
             helper(board,n,m,i,j-1,idx+1,word)||
             helper(board,n,m,i,j+1,idx+1,word);
         
-        board[i][j] = word[idx];
+        board[i][j] = temp;
         
         return res;
         
