@@ -4,9 +4,9 @@ public:
         int c=0;
         sort(amount.begin(),amount.end());
         
-        while(amount[1]!=0){
+        while(amount[2]!=0){
             
-            if(amount[1]!=0)
+            if(amount[2]!=0)
                 
                 c++,amount[1]--,amount[2]--;
             
