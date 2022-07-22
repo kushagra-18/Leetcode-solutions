@@ -1,7 +1,7 @@
 class Solution {
 public:
     
-    void f(vector<vector<int>>&res,int idx,vector<int> nums){
+    void f(vector<vector<int>>&res,int idx,vector<int> &nums){
         
         if(idx == nums.size()){
             
@@ -14,7 +14,7 @@ public:
             
             swap(nums[i],nums[idx]);
             f(res,idx+1,nums);
-          //  swap(nums[idx],nums[i]);
+           swap(nums[idx],nums[i]);
             
         }
         
