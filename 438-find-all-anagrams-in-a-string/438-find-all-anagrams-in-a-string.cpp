@@ -45,7 +45,7 @@ class Solution
 
                 left++;
                 right++;
-                if(right!=s.size())
+                // if(right!=s.size())
                     smp[s[right]]++;
                 
             }
