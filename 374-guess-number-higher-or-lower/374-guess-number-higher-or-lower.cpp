@@ -24,7 +24,7 @@ public:
             if(guess(mid)==0)
                 return mid;
             
-            if(guess(mid)>0)
+            if(guess(mid)==1)
                 lo = mid + 1;
             else
                 hi = mid - 1;
