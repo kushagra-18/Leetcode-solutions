@@ -12,7 +12,7 @@ class Solution
 
             while (low < high)
             {
-                mid = low + (high - low) / 2;
+                mid = (low + high)>>1;
 
                 if (X <= arr[mid])
                 {
@@ -41,7 +41,6 @@ class Solution
                 temp.push_back(nums[i]);
             else
             {
-
                 // auto idx = lower_bound(temp.begin(), temp.end(), nums[i]) - temp.begin();
 
                 auto idx = lowerBound(temp,nums[i]);
