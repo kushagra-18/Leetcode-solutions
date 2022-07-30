@@ -1,24 +1,60 @@
 class MyHashMap {
 public:
     
-    vector<int> arr;
+    vector<vector<pair<int,int>>> map;
+    const int SIZE = 997;
     MyHashMap() {
         
-        arr.resize(1000001,-1);
+        map.resize(SIZE);
     }
     
     void put(int key, int value) {
      
-        arr[key] = value;
+        int idx = key%SIZE;
+        
+        vector<pair<int,int>> &row = map[idx];
+        
+        for(auto &x:row){
+            
+            if(x.first == key){
+                x.second = value;
+                return;
+            }
+        }
+        
+        row.push_back({key,value});
         
     }
     
     int get(int key) {
-        return arr[key];
+       
+        int idx = key%SIZE;
+        
+        vector<pair<int,int>> &row = map[idx];
+        
+        for(auto &x:row){
+            
+            if(x.first == key){
+                return x.second;
+            }
+        }
+        
+        return -1;
     }
     
     void remove(int key) {
-        arr[key] = -1;
+        
+        int idx = key%SIZE;
+        
+        vector<pair<int,int>> &row = map[idx];
+        
+        for(auto &x:row){
+            
+            if(x.first == key){
+                x.second = -1;
+            }
+        }
+        
     }
 };
 
