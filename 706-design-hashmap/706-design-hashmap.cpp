@@ -2,7 +2,7 @@ class MyHashMap {
 public:
     
     vector<vector<pair<int,int>>> map;
-    const int SIZE = 997;
+    const int SIZE = 97;
     MyHashMap() {
         
         map.resize(SIZE);
