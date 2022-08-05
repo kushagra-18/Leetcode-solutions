@@ -25,12 +25,9 @@ public:
         while(j<m)
              res.push_back(nums2[j++]);
         
-        for(auto x:res)
-            cout<<x<<" ";
-        
-        int k = res.size();
 
-        
+       int k = res.size();
+
        return (k%2==0)?(res[k/2]+res[(k/2)-1])/2.0:res[k/2];
         
     
