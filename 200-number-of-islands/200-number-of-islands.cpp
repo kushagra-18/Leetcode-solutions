@@ -7,7 +7,7 @@ public:
         
         grid[i][j] = '*';
         
-         islandHelper(grid,i-1,j,m,n);
+        islandHelper(grid,i-1,j,m,n);
         islandHelper(grid,i,j-1,m,n);
         islandHelper(grid,i+1,j,m,n);
         islandHelper(grid,i,j+1,m,n);
