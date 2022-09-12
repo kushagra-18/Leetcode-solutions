@@ -11,10 +11,16 @@ public:
         return f(root->left,subRoot->left) && f(root->right,subRoot->right);
         
     }
-    bool isSubtree(TreeNode* s, TreeNode* t) {
+    bool isSubtree(TreeNode* root, TreeNode* subRoot) {
         
-        return f(s, t)
-      || (s->left && isSubtree(s->left, t))
-      || (s->right && isSubtree(s->right, t));
-  }
+        // if(root==)
+        if(root==nullptr)
+            return false;
+        
+        if(f(root,subRoot))
+            return true;
+        else
+        return isSubtree(root->left,subRoot)|| isSubtree(root->right,subRoot);
+        
+    }
 };
