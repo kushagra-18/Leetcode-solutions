@@ -32,15 +32,13 @@ public:
             
             int n = q.size();
             
-             if (--d ==0) return root;
-            
             for(int i = 0;i<n;i++){
                 
                 auto top = q.front();
                 q.pop();
         
             
-                if(d==1){
+                if(d-h==1){
                     
                     left = top->left;
                     right = top->right;
@@ -63,7 +61,7 @@ public:
                 
                 // break;
             }
-            
+            h++;
             
         }
         
