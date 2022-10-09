@@ -49,9 +49,8 @@ public:
             
             if(sum == k ){
                 
-                flag = true;
-               
-                break;
+               return true;
+   
             }else if (sum > k){
                 
                 j--;
@@ -64,7 +63,7 @@ public:
         
         }
         
-        return flag;
+        return false;
         
     }
 };
