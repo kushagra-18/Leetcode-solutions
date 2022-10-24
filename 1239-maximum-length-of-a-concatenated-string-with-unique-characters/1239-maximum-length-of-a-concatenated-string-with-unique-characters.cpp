@@ -7,10 +7,9 @@ public:
         if(!check(res))
             return;
         
-      if(res.size() > maxx) maxx = res.size();
+      maxx = max(maxx,(int)res.size());
                
         for(int i = idx;i<arr.size();i++){
-            // res += arr[i];
             f(arr,res+arr[i],i+1);
         }
            
@@ -29,15 +28,12 @@ public:
         
     }
     
-    bool check(string word){
-
-        set<char> st;
-        
-        for (auto &x : word) {
-            if (st.find(x) != st.end()) return false;
-            st.insert(x);
+    bool check(string str){
+        unordered_set<char> s;
+        for(auto ch: str){
+            s.insert(ch);
         }
-        return true;
-    
+        
+        return str.size() == s.size();
     }
 };
