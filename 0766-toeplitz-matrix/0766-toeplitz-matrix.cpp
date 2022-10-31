@@ -9,7 +9,7 @@ public:
             
             for(int j = 0;j<m;j++){
                 
-                if(i > 0 && j > 0 && mat[i-1][j-1]!=mat[i][j])
+                if(i < n-1 && j < m-1 && mat[i+1][j+1]!=mat[i][j])
                     return false;
                 
             }
